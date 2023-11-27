@@ -1,35 +1,34 @@
 import React from 'react'
 import { Text, StyleSheet } from 'react-native'
-import Theme from '../theme'
+import theme from '../theme.js'
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: Theme.fontSizes.body,
-    color: Theme.colors.textPrimary,
-    fontFamily: Theme.fonts.main,
-    fontWeight: Theme.fontWeights.normal,
+    fontSize: theme.fontSizes.body,
+    color: theme.colors.textPrimary,
+    fontWeight: theme.fontWeights.normal,
   },
   bold: {
-    fontWeight: Theme.fontWeights.bold,
+    fontWeight: theme.fontWeights.bold,
   },
   subheading: {
-    fontSize: Theme.fontSizes.subheading,
+    fontSize: theme.fontSizes.subheading,
   },
   colorPrimary: {
-    color: Theme.colors.primary,
+    color: theme.colors.primary,
   },
   colorSecondary: {
-    color: Theme.colors.textSecondary,
+    color: theme.colors.textSecondary,
   },
   textAlignCenter: {
     textAlign: 'center',
   },
 })
 
-export default function StyledText({
+function StyledText({
   children,
   color,
-  fontZise,
+  fontSize,
   fontWeight,
   align,
   style,
@@ -40,7 +39,7 @@ export default function StyledText({
     color === 'primary' && styles.colorPrimary,
     color === 'secondary' && styles.colorSecondary,
     fontWeight === 'bold' && styles.bold,
-    fontZise === 'subheading' && styles.subheading,
+    fontSize === 'subheading' && styles.subheading,
     align === 'center' && styles.textAlignCenter,
     style,
   ]
@@ -51,3 +50,4 @@ export default function StyledText({
     </Text>
   )
 }
+export default StyledText

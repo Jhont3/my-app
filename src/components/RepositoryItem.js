@@ -10,7 +10,7 @@ const RepositoryItemHeader = (props) => (
       <Image style={styles.Image} source={{ uri: props.ownerAvatarUrl }} />
     </View>
     <View style={{ flexGrow: 1 }}>
-      <StyledText fontZise="subheading" fontWeight="bold">
+      <StyledText fontSize="subheading" fontWeight="bold">
         {props.fullName}
       </StyledText>
       <StyledText color="secondary">{props.description}</StyledText>
@@ -20,7 +20,7 @@ const RepositoryItemHeader = (props) => (
 )
 
 const RepositoryItem = (props) => (
-  <View key={props.id}>
+  <View key={props.id} style={styles.container}>
     <RepositoryItemHeader {...props} />
     <RepositoryStats {...props} />
   </View>
